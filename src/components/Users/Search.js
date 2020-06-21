@@ -27,21 +27,29 @@ export class Search extends Component {
     render() {
         const { showClear, clearUsers } = this.props;
         return (
-            <div>
+            <div className="container">
                 <form onSubmit= {this.onSubmit} className='form'>
-                    <input 
-                        type="text" 
-                        name="text" 
-                        placeholder="Search User..."
-                        value={this.state.text}
-                        onChange = {this.onChange}
-                    />
-                    <input type="submit" value="Search" className="btn btn-dark btn-clock"/>
+                    <div className="form-group row">
+                        <div className="col-12">
+                            <input 
+                                type="text" 
+                                name="text" 
+                                placeholder="Search User..."
+                                value={this.state.text}
+                                onChange = {this.onChange}
+                                className="form-control"
+                                />
+                        </div>                                                
+                    </div>
+                    <div className="form-group row">
+                        <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                    </div> 
                 </form>
-                { (showClear) &&
-                    (<button className="btn btn-light btn-block" onClick={clearUsers}>Clear</button>)
-                }
-                
+                <div className="form-group row">
+                    { (showClear) &&
+                        (<button className="btn btn-danger btn-block" onClick={clearUsers }>Clear</button>)
+                    }
+                </div>               
             </div>
         )
     }

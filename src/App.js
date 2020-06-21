@@ -41,13 +41,16 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar/>
-        <div className="container">
+        <div className="container mt-4" >
           <Alert alert={this.state.alert}/>
-          <Search 
-          searchUsers= {this.searchUsers} 
-          clearUsers={this.clearUsers} 
-          showClear={users.length > 0 ? true:false}
-          setAlert={this.setAlert}/>
+          <div>
+            <Search
+            searchUsers= {this.searchUsers} 
+            clearUsers={this.clearUsers} 
+            showClear={users.length > 0 ? true:false}
+            setAlert={this.setAlert}/>
+          </div>
+          
           <User loading= {loading} users= {users}/>
         </div>
       </div>

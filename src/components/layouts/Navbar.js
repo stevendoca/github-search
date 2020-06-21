@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Navbar = ({icon, title}) => { // destructure props.icon and props.title
     return (
-        <nav className='navbar bg-primary'>
-            <h1>
+        <nav class="navbar navbar-dark bg-dark">
+            <h1 className="text-white">
                 <i className={icon} />
                 {title}
             </h1>
